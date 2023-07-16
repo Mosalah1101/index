@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="this is Bage For sales shoses " />
+    <meta name='viewport' content='width=device-width,intial-scale=1.0' />
+
+    <title>SHOSES</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      
+      input {
+        width: 100%;
+        height: 30px;
+        outline: none;
+        border: none;
+        background: #111;
+        color: #fff;
+        margin: 4px 0;
+        border-radius: 10px;
+        padding: 4px;
+      }
+      button {
+        width: 100%;
+        height: 30px;
+        border: none;
+        cursor: pointer;
+        background: #140236;
+        color: #fff;
+        border-radius: 20px;
+        transition: 0.5s;
+      }
+      button:hover {
+        background: #4c239a;
+        letter-spacing: 2px;
+      }
+      input:focus {
+        background: #000;
+        color: #fff;
+        transform: scale(1.1);
+      }
+      table{
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+        }
+        table th{
+            text-transform: uppercase;
+        }
+        th,td{
+            padding: 5px;
+        }
+      body {
+        background: #222;
+        color: #fff;
+        font-family: system-ui;
+        .crud {
+          width: 80%;
+          margin: auto;
+        }
+        
+        .head {
+          text-align: center;
+          margin: 10px 0;
+        }
+        .price input {
+          width: 20%;
+        }
+      
+        #total {
+          background: #820c0c;
+          padding: 4px 2px;
+          border-radius: 3px;
+        }
+        #total::before {
+          content: "Total : ";
+        }
+       
+        .btnsearch{
+            display: flex;
+justify-content: space-between;
+        }
+        .btnsearch button{
+            width: 45%;
+
+        }
+        #deleteall{
+          margin: 20px 0;
+        }
+        
+       
+      }
+    </style>
+    <div class="crud">
+      <div class="head">
+        <h2>CRUD</h2>
+        <p>PRODUCT MANGMENT SYSTEM</p>
+      </div>
+      <div class="inputs">
+        <input type="text" placeholder="TITLE" name="" id="title" />
+        <div class="price">
+          <input onkeyup="gettotal()" type="number" id="price" placeholder="PRICE" />
+          <input onkeyup="gettotal()" type="number" id="taxes" placeholder="TAXES" />
+          <input onkeyup="gettotal()" type="number" id="ads" placeholder="ADS" />
+          <input onkeyup="gettotal()" type="number" id="discount" placeholder="DISCOUNT" />
+          <small id="total"></small>
+        </div>
+        <input type="number" id="count" placeholder="COUNT" />
+        <input type="text" id="category" placeholder="CATEGORY" />
+        <button id="submit">Create</button>
+      </div>
+      <div class="outputs">
+        <div class="searchblock">
+            <input onkeyup="searchdata(this.value)" type="text" id="search" placeholder="Search">
+            <div class="btnsearch">
+                    <button onclick="getsearchmood(this.id)" id="searchtitle">Search By Title</button>
+                    <button onclick="getsearchmood(this.id)" id="searchcatogry">Search By category</button>
+                </div>
+            </div>
+        </div>
+        <div id="deleteall"></div>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Titel</th>
+                    <th>Price</th>
+                    <th>Taxses</th>
+                    <th>ads</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Upate</th>
+                    <th>Delete</th>
+
+                </tr>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+      </div>
+    </div>
+    <script src="shop.js"></script>
+  </body>
+</html>
